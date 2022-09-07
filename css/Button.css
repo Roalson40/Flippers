@@ -1,0 +1,26 @@
+.start{
+  height: 50px;
+  width: 100px;
+  color: white;
+  background-color: #00b3ff;
+  float: right;
+  border-radius: 10px;
+}
+.restart{
+  height: 50px;
+  width: 100px;
+  color: white;
+  background-color: #0f9900;
+  float: right;
+  margin-right: 50px;
+  margin-left: 50px;
+  border-radius: 10px;
+}
+.quitexercise{
+  height: 50px;
+  width: 100px;
+  color: white;
+  background-color: crimson;
+  float: right;
+  border-radius: 10px;
+}

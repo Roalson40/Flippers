@@ -1,0 +1,83 @@
+<!doctype html>
+<html class="no-js" lang="">
+
+<head>
+  <meta charset="utf-8">
+  <title></title>
+  <meta name="description" content="">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <meta property="og:title" content="">
+  <meta property="og:type" content="">
+  <meta property="og:url" content="">
+  <meta property="og:image" content="">
+
+  <link rel="manifest" href="site.webmanifest">
+  <link rel="apple-touch-icon" href="icon.png">
+  <!-- Place favicon.ico in the root directory -->
+
+  <link rel="stylesheet" href="css/normalize.css">
+  <link rel="stylesheet" href="css/main.css">
+
+  <script src="js/main.js" defer></script>
+  <meta name="theme-color" content="#fafafa">
+  <link rel="stylesheet" href="css/bootstrap/bootstrap.min.css"/>
+</head>
+
+<body>
+<div style="width: 100%">
+  <button class="quitexercise">Quit Exercise</button>
+  <button class="restart" onclick="resetCounter()">Restart</button>
+
+  <div style="margin-top: 1%">
+    <label id="time" style="color:white; font-size: 25px">Time: 60</label>
+    <br>
+    <label style="color:white; font-size: 25px">Level:</label><label style="color:white; font-size: 25px; margin-left: 10px">0</label>
+  <br>
+  <label style="color:white; font-size: 25px">Which eye:</label><label style="color:white; font-size: 25px; margin-left: 10px">both eyes</label>
+  <br>
+  <label style="color: white; font-size: 25px">Number of flips:</label><label style="color:white; font-size: 25px; margin-left: 10px">+/-1.00</label>
+  <br>
+    <form>
+  <label style="color: white; font-size: 25px">Score: </label>
+    <label id="counter-label" style="color: white; font-family: inherit; font-size: x-large; margin-left: 10px">0</label>
+    </form>
+  </div>
+</div>
+<hr style=" border: 1px solid white" />
+<br>
+
+</div>
+<div>
+<!--<img src="img/Flipper.png" style="">-->
+  <div id="word" style="width:50%; height: 600px; background-color: white; top: 0; right: 0; left: 0; bottom: 0; margin: auto; overflow: hidden; border: 5px solid #b3d4fc; position: relative">
+    <img src="img/Training.png" style="position: absolute;
+    top: 50%;
+    left: 50%;
+    display: block;
+    min-width: 100%;
+    min-height: 100%;
+    transform:translate(-50%,-50%);" id="img1" onclick="hideImg()">
+
+    <p ondblclick="showImg()" style="font-size: 20px">Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Maecenas porttitor congue massa. Fusce posuere, magna sed pulvinar ultricies, purus lectus malesuada libero, sit amet commodo magna eros quis urna. Nunc viverra imperdiet enim. Fusce est. Vivamus a tellus. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas.
+
+    Proin pharetra nonummy pede. Mauris et orci. Aenean nec lorem. In porttitor. Donec laoreet nonummy augue. Suspendisse dui purus, scelerisque at, vulputate vitae, pretium mattis, nunc. Mauris eget neque at sem venenatis eleifend.
+
+    Ut nonummy. Fusce aliquet pede non pede. Suspendisse dapibus lorem pellentesque magna. Integer nulla. Donec blandit feugiat ligula. Donec hendrerit, felis et imperdiet euismod, purus ipsum pretium metus, in lacinia nulla nisl eget sapien. Donec ut est in lectus consequat consequat.
+
+    Etiam eget dui. Aliquam erat volutpat. Sed at lorem in nunc porta tristique.
+
+  </p>
+</div>
+</div>
+
+<br>
+
+<button id="redbutton" class="redbutton" onclick="incrementClick()">Click here, when you have made the text clear</button>
+
+
+<!--<button onclick="myfunction()">++</button>
+<p id="demo" style="color: white"></p>-->
+</body>
+
+</html>

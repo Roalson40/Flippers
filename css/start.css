@@ -1,0 +1,52 @@
+html {
+  background-color: #222222;
+}
+.title{
+  background: -webkit-linear-gradient(45deg, #ffffff,#00b3ff, #ffffff, #00b3ff,#ffffff,#00b3ff, #ffffff);
+-moz-linear-gradient(45deg, #ffffff,#00b3ff, #ffffff, #00b3ff,#ffffff,#00b3ff, #ffffff);
+-ms-linear-gradient(45deg, #ffffff,#00b3ff, #ffffff, #00b3ff,#ffffff,#00b3ff, #ffffff);
+  color: transparent;
+  align-items: center;
+  margin-top: 300px;
+  display: flex;
+  flex-direction: column;
+  font-size: 5rem;
+  -webkit-background-clip: text;
+  animation: ran 1s linear infinite;
+}
+
+.button-start{
+top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  margin: auto;
+  display: block;
+  height: 100px;
+  width: 200px;
+  background: radial-gradient(circle, rgba(247,158,192,1)0%, rgba(118,174,241,1)100%);
+  border: none;
+  color: #fff;
+  border-radius: 10px;
+  cursor: pointer;
+  position: relative;
+  font-size: 40px;
+  text-underline: none;
+  transition: opacity 0.5s;
+  opacity: 0.5;
+}
+a {
+  position: relative;
+  display: inline-block;
+  text-decoration: none;
+  text-align: center;
+  cursor: pointer;
+  user-select: none;
+  color: white;
+}
+
+.button-start:hover{
+  opacity: 1;
+  transition-duration: 0.5s;
+}
+
