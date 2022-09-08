@@ -6,7 +6,7 @@ let number3 = 0;
 let number4 = 0;
 let number5 = 0;
 let number6 = 0;
-let number7 = 0;
+let level = 0;
 
 let checkbox1 = document.getElementById("1");
 let checkbox2 = document.getElementById("2");
@@ -32,12 +32,17 @@ var counterVal = 0;
 let timeout=0;
 let countdownTimer;
 let remind = document.getElementById("remind");
+let remind1 = document.getElementById("remind");
 
 function next0(){
   document.getElementById('fieldset1').style.display = 'none';
   document.getElementById('fieldset2').style.display = 'block';
 }
 
+function next1(){
+  document.getElementById('fieldset4').style.display = 'none';
+  document.getElementById('fieldset3').style.display = 'block';
+}
 
 function selectCheckOne(obj){
   if(obj.checked){
@@ -149,25 +154,36 @@ function countdownForShapes(time){
   document.getElementById('fieldset3').style.display = 'none';
   let timerForShapes = setInterval(function () {
     if (time>0){
-      remind.innerHTML="Level 1 will be "+time+" seconds to show";
+      remind.innerHTML="Level "+level+" will be "+time+" seconds to show";
       time--;
     }
     else if (time<=0){
       clearInterval(timerForShapes);
-      document.getElementById('fieldset4').style.display = 'block';
+      if (level !== 2){
+        document.getElementById('fieldset3').style.display = 'block';
+        change();
+      }
       remind.style.display="none";
     }
   },1000);
 }
 
 
-function change(){
-  document.getElementById('title2').innerHTML = '12345';
 
+
+function change(){
+  if (level === 1){
+    symbol1="Number of flips : + 1.50";
+    document.getElementById('fieldset3-symbol').innerHTML=symbol1;
+  }
+ else if (level === 2){
+   document.getElementById('fieldset4').style.display = 'block';
+  }
 }
 
 window.onload= function (){
   document.getElementById('fieldset3-symbol').innerHTML = symbol1;
+
 
   var oPtxt=document.getElementById("title");
 
@@ -253,45 +269,18 @@ if (checks[1].checked){
     }
    }
    words();
-   if (counterVal === 5){
+   if (counterVal === 1 && level === 0){
+     level++;
      alert("congratulations, you passed level 0")
      countdownForShapes(5);
+     document.getElementById('level').innerHTML = 'Level : ' + level;
+     if (counterVal === 3 && level === 1){
+       level++;
+       alert("congratulations, you passed level 1")
+       countdownForShapes(5);
+       document.getElementById('level').innerHTML = 'Level : ' + level;
+     }
    }
-
-}
-
-function next2() {
-  if (number7 === 0){
-    if (checks2[0].checked){
-      incrementClick0();
-    }
-  }
-  else if (number7 === 1){
-    if (checks2[1].checked){
-      incrementClick0();
-    }
-  }
-  else if (number7 === 2){
-    if (checks2[2].checked){
-      incrementClick0();
-    }
-  }
-  else  if (number7 === 3){
-    if (checks2[3].checked){
-      incrementClick0();
-    }
-  }
-  else  if (number7 === 4){
-    if (checks2[4].checked){
-      incrementClick0();
-    }
-  }
-  words();
-  if (counterVal === 5){
-    alert("congratulations, you passed level 1")
-    countdownForShapes(5);
-  }
-
 }
 
 
@@ -300,7 +289,6 @@ function next2() {
 function words() {
   symbol();
   document.getElementById('next').style.display = 'none';
-  document.getElementById('next2').style.display = 'none';
   recursion();
   for (let i = 0; i < a.length; i++) {
     let b = a[number1];
@@ -311,7 +299,6 @@ function words() {
     console.log(b,c,d,e,f);
     word = b+c+d+e+f;
     document.getElementById('title1').innerHTML = word;
-    document.getElementById('title2').innerHTML = word;
 
 if (number6 === 0){
   word1 = word;
@@ -355,13 +342,24 @@ else if (number6 === 1){
 }
 
 function symbol(){
-  if (symbol1 === "Number of flips : + 1.00"){
-    symbol1 = "Number of flips : - 1.00"
-    fieldset3symbol.innerHTML = symbol1;
+  if (level===0){
+    if (symbol1 === "Number of flips : + 1.00"){
+      symbol1 = "Number of flips : - 1.00"
+      fieldset3symbol.innerHTML = symbol1;
+    }
+    else if (symbol1 === "Number of flips : - 1.00"){
+      symbol1 = "Number of flips : + 1.00"
+      fieldset3symbol.innerHTML = symbol1;
+    }
   }
-  else if (symbol1 === "Number of flips : - 1.00"){
-    symbol1 = "Number of flips : + 1.00"
-    fieldset3symbol.innerHTML = symbol1;
+  else if (level===1){
+    if (symbol1 === "Number of flips : - 1.50"){
+      symbol1 = "Number of flips : + 1.50"
+      fieldset3symbol.innerHTML = symbol1;
+    }
+    else if (symbol1 === "Number of flips : + 1.50"){
+      symbol1 = "Number of flips : - 1.50"
+      fieldset3symbol.innerHTML = symbol1;
+    }
   }
 }
-
