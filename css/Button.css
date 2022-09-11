@@ -1,26 +1,37 @@
-.start{
-  height: 50px;
-  width: 100px;
-  color: white;
-  background-color: #00b3ff;
-  float: right;
-  border-radius: 10px;
-}
 .restart{
   height: 50px;
-  width: 100px;
+  width: 110px;
   color: white;
-  background-color: #0f9900;
+  background-color: rgba(18,216,0,0.7);
   float: right;
   margin-right: 50px;
   margin-left: 50px;
   border-radius: 10px;
+  cursor: pointer;
+  font-size: 20px;
 }
+
+.restart:hover{
+  cursor: pointer;
+  transition-duration: 0.5s;
+  filter: brightness(1);
+  background-color: rgb(18,216,0);
+}
+
 .quitexercise{
   height: 50px;
-  width: 100px;
+  width: 110px;
   color: white;
-  background-color: crimson;
+  background-color: rgba(237,20,0,0.7);
   float: right;
   border-radius: 10px;
+  cursor: pointer;
+  font-size: 20px;
+}
+
+.quitexercise:hover{
+  cursor: pointer;
+  transition-duration: 0.5s;
+  filter: brightness(1);
+  background-color: rgb(237,20,0);
 }

@@ -7,6 +7,7 @@ let number4 = 0;
 let number5 = 0;
 let number6 = 0;
 let level = 0;
+let age = 0;
 
 let checkbox1 = document.getElementById("1");
 let checkbox2 = document.getElementById("2");
@@ -20,19 +21,17 @@ checks.push(checkbox3)
 checks.push(checkbox4)
 checks.push(checkbox5)
 
-let checks2 = [];
-
 let symbol1 = "Number of flips : - 1.00";
 let fieldset3symbol = document.getElementById('fieldset3-symbol');
 
 
 document.getElementById('next').onclick = () => next();
 
+
 var counterVal = 0;
 let timeout=0;
 let countdownTimer;
 let remind = document.getElementById("remind");
-let remind1 = document.getElementById("remind");
 
 function next0(){
   document.getElementById('fieldset1').style.display = 'none';
@@ -41,6 +40,11 @@ function next0(){
 
 function next1(){
   document.getElementById('fieldset4').style.display = 'none';
+  document.getElementById('fieldset3').style.display = 'block';
+}
+
+function next2(){
+  document.getElementById('fieldset5').style.display = 'none';
   document.getElementById('fieldset3').style.display = 'block';
 }
 
@@ -57,37 +61,6 @@ function selectCheckOne(obj){
   }
   var button = document.getElementById("next")
   button.style.display = "block";
-}
-
-function selectCheckTwo(obj){
- if(obj.checked){
-   for( var i=0;i<checks2.length;i++){
-     checks2[i].checked=false;
-   }
-   obj.checked=true;
- }else{
-   for( var i=0;i<checks2.length;i++){
-     checks2[i].checked=false;
-   }
- }
-  var button = document.getElementById("next2")
-  button.style.display = "block";
- }
-
-function selectCheckThree(obj){
-  if(obj.checked){
-    for( var i=0;i<checks.length;i++){
-      checks3[i].checked=false;
-    }
-    obj.checked=true;
-  }else{
-    for( var i=0;i<checks.length;i++){
-      checks3[i].checked=false;
-    }
-  }
-  var button = document.getElementById("next3")
-  button.style.display = "block";
-
 }
 
 
@@ -149,6 +122,31 @@ function refreshTime0(){
    }
  }
 
+ function fieldset4old(){
+  age = 15;
+  next1();
+ }
+
+ function fieldset4old2(){
+  age = 38;
+  next1();
+ }
+
+ function fieldset5old(){
+  age = 15;
+  next2();
+ }
+
+ function fieldset5old2(){
+  age = 30;
+  next2();
+}
+
+ function fieldset5old3(){
+  age = 60;
+  next2();
+}
+
 function countdownForShapes(time){
   remind.style.display = "inline";
   document.getElementById('fieldset3').style.display = 'none';
@@ -159,16 +157,14 @@ function countdownForShapes(time){
     }
     else if (time<=0){
       clearInterval(timerForShapes);
-      if (level !== 2){
+      if (level < 2){
         document.getElementById('fieldset3').style.display = 'block';
-        change();
       }
+      change();
       remind.style.display="none";
     }
   },1000);
 }
-
-
 
 
 function change(){
@@ -177,7 +173,14 @@ function change(){
     document.getElementById('fieldset3-symbol').innerHTML=symbol1;
   }
  else if (level === 2){
+    symbol1="Number of flips : + 2.00";
+    document.getElementById('fieldset3-symbol').innerHTML=symbol1;
    document.getElementById('fieldset4').style.display = 'block';
+  }
+ else if (level === 3){
+    symbol1="Number of flips : + 2.50";
+    document.getElementById('fieldset3-symbol').innerHTML=symbol1;
+    document.getElementById('fieldset5').style.display = 'block';
   }
 }
 
@@ -270,17 +273,47 @@ if (checks[1].checked){
    }
    words();
    if (counterVal === 1 && level === 0){
-     level++;
+     level = 1;
      alert("congratulations, you passed level 0")
      countdownForShapes(5);
      document.getElementById('level').innerHTML = 'Level : ' + level;
-     if (counterVal === 3 && level === 1){
-       level++;
+   }
+     if (counterVal === 2 && level === 1){
+       level = 2;
        alert("congratulations, you passed level 1")
        countdownForShapes(5);
        document.getElementById('level').innerHTML = 'Level : ' + level;
      }
-   }
+     if (counterVal === 3 && level === 2 && age <= 30){
+       level = 3;
+       alert("congratulations, you passed level 2")
+       countdownForShapes(5);
+       document.getElementById('level').innerHTML = 'Level : ' + level;
+     }
+     if (counterVal === 4 && level === 2 && age >= 31){
+       level = 3;
+       alert("congratulations, you passed level 2")
+       countdownForShapes(5);
+       document.getElementById('level').innerHTML = 'Level : ' + level;
+     }
+  if (counterVal === 5 && level === 3 && age <= 20){
+    level = 4;
+    alert("congratulations, you passed level 3")
+    countdownForShapes(5);
+    document.getElementById('level').innerHTML = 'Level : ' + level;
+  }
+  if (counterVal === 6 && level === 3 && 21 <= age <= 40){
+    level = 4;
+    alert("congratulations, you passed level 3")
+    countdownForShapes(5);
+    document.getElementById('level').innerHTML = 'Level : ' + level;
+  }
+  if (counterVal === 7 && level === 3 && age <= 41){
+    level = 4;
+    alert("congratulations, you passed level 3")
+    countdownForShapes(5);
+    document.getElementById('level').innerHTML = 'Level : ' + level;
+  }
 }
 
 
@@ -359,6 +392,25 @@ function symbol(){
     }
     else if (symbol1 === "Number of flips : + 1.50"){
       symbol1 = "Number of flips : - 1.50"
+      fieldset3symbol.innerHTML = symbol1;
+    }
+  }
+  else if (level===2){
+    if (symbol1 === "Number of flips : - 2.00"){
+      symbol1 = "Number of flips : + 2.00"
+      fieldset3symbol.innerHTML = symbol1;
+    }
+    else if (symbol1 === "Number of flips : + 2.00"){
+      symbol1 = "Number of flips : - 2.00"
+      fieldset3symbol.innerHTML = symbol1;
+    }
+  }
+  else if (level===3) {
+    if (symbol1 === "Number of flips : - 2.50") {
+      symbol1 = "Number of flips : + 2.50"
+      fieldset3symbol.innerHTML = symbol1;
+    } else if (symbol1 === "Number of flips : + 2.50") {
+      symbol1 = "Number of flips : - 2.50"
       fieldset3symbol.innerHTML = symbol1;
     }
   }

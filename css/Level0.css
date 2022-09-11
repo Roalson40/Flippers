@@ -176,7 +176,7 @@ input:checked + span{
 
 #Btn1{
   width: 100px;
-  background: rgba(255,213,0,0.7);
+  background: rgba(255,183,0,0.7);
   font-weight: bold;
   color: white;
   border: 0 none;
@@ -190,12 +190,12 @@ input:checked + span{
   cursor: pointer;
   transition-duration: 0.5s;
   filter: brightness(1);
-  background-color: rgb(255,213,0);
+  background-color: rgb(255,183,0);
 }
 
 #Btn2{
   width: 100px;
-  background: rgba(255,213,0,0.7);
+  background: rgba(255,183,0,0.7);
   font-weight: bold;
   color: white;
   border: 0 none;
@@ -209,13 +209,13 @@ input:checked + span{
   cursor: pointer;
   transition-duration: 0.5s;
   filter: brightness(1);
-  background-color: rgb(255,213,0);
+  background-color: rgb(255,183,0);
 }
 
 .plus0 {
   display: inline-block;
   border-radius: 4px;
-  background-color: #f4511e;
+  background-color: rgba(244,81,30,0.7);
   border: none;
   color: #FFFFFF;
   text-align: center;
@@ -226,6 +226,13 @@ input:checked + span{
   cursor: pointer;
   margin: 5px;
   vertical-align:middle;
+}
+
+.plus0:hover{
+  cursor: pointer;
+  transition-duration: 0.5s;
+  filter: brightness(1);
+  background-color: rgb(244,81,30);
 }
 
 .plus0 span {
@@ -256,7 +263,7 @@ input:checked + span{
 .minus0 {
   display: inline-block;
   border-radius: 4px;
-  background-color: #f4511e;
+  background-color: rgba(244,81,30,0.7);
   border: none;
   color: #FFFFFF;
   text-align: center;
@@ -267,6 +274,13 @@ input:checked + span{
   cursor: pointer;
   margin: 5px;
   vertical-align:middle;
+}
+
+.minus0:hover{
+  cursor: pointer;
+  transition-duration: 0.5s;
+  filter: brightness(1);
+  background-color: rgb(244,81,30);
 }
 
 .minus0 span {
@@ -294,34 +308,25 @@ input:checked + span{
   right: 0;
 }
 
-.year1{
+.year{
   display: inline-block;
   border-radius: 4px;
-  background-color: #f4511e;
+  background-color:rgba(0,202,253,0.7);
   border: none;
   color: #FFFFFF;
   text-align: center;
   font-size: 20px;
   padding: 10px;
-  width: 300px;
+  width: 230px;
   transition: all 0.5s;
   cursor: pointer;
   margin: 5px;
   vertical-align:middle;
 }
 
-.year2{
-  display: inline-block;
-  border-radius: 4px;
-  background-color: #f4511e;
-  border: none;
-  color: #FFFFFF;
-  text-align: center;
-  font-size: 20px;
-  padding: 10px;
-  width: 300px;
-  transition: all 0.5s;
+.year:hover{
   cursor: pointer;
-  margin: 5px;
-  vertical-align:middle;
+  transition-duration: 0.5s;
+  filter: brightness(1);
+  background-color: rgb(0,202,253);
 }

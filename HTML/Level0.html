@@ -11,7 +11,7 @@
 </head>
 <body>
 <div style="width: 100%">
-  <button class="quitexercise" onclick='window.open("start.html")'>Quit Exercise</button>
+  <button class="quitexercise" onclick='window.location.href="start.html"'>Quit Exercise</button>
   <button class="restart" onclick="destroy0()">Restart</button>
 
   <div style="margin-top: 1%">
@@ -115,56 +115,18 @@
 
     <br>
     <br>
-    <input class="year1"  value="All ages from 0-30 years" onclick="next1()" type="button" style="float: left">
-
-    <input class="year2" value="All ages from 31 and up" type="button" style="float: right">
+    <input id="year1" class="year"  value="ages : 0-30 years" onclick="fieldset4old()" type="button" style="float: left">
+    <input id="year2" class="year" value="ages : 31 years and up" onclick="fieldset4old2()" type="button" style="float: right">
   </fieldset>
 
   <fieldset id="fieldset5">
-    <div style="width: 100%; height: 300px">
-      <div style="float: left">
-        <h2 class="fs-title">Which eye : Both eyes</h2>
-        <h2 class="fs-title">Number of flips : - 1.50</h2>
-        <br>
-        <br>
-        <br>
-        <br>
-        <br>
-        <p id="title2"></p>
-        <br>
-      </div>
-      <div style="float: right">
-        <p>Select the same text in the following selection</p>
-        <br>
-        <label class="cover">
-        <input type="checkBox"  name="level0statement2" id="6" onclick="selectCheckTwo(this)" class="level0"><span class="level00" for="6"></span>
-        </label>
-          <br>
-        <br>
-        <label class="cover">
-        <input type="checkBox"  name="level0statement2" id="7" onclick="selectCheckTwo(this)" class="level0"><span class="level00" for="7"></span>
-        </label>
-          <br>
-        <br>
-        <label class="cover">
-        <input type="checkBox"  name="level0statement2" id="8" onclick="selectCheckTwo(this)" class="level0"><span class="level00" for="8"></span>
-        </label>
-          <br>
-        <br>
-        <label class="cover">
-        <input type="checkBox"  name="level0statement2" id="9" onclick="selectCheckTwo(this)" class="level0"><span class="level00" for="9"></span>
-        </label>
-          <br>
-        <br>
-        <label class="cover">
-          <input type="checkBox"  name="level0statement2" id="10" onclick="selectCheckTwo(this)" class="level0"><span class="level00" for="10"></span>
-        </label>
-      </div>
-    </div>
-    <br>
-    <br>
+    <h1>Choose your age from the options below</h1>
 
-    <input type="button" id="next2" name="next" class="next action-button" value="Next" />
+    <br>
+    <br>
+    <input id="year3" class="year" value="ages : 0-20 years" onclick="fieldset5old()" type="button" style="float: left">
+    <input id="year4" class="year" value="ages : 21-40 years" onclick="fieldset5old2()" type="button">
+    <input id="year5" class="year" value="ages : 41 years and up" onclick="fieldset5old3()" type="button" style="float: right">
   </fieldset>
   <fieldset id="fieldset6">
 
