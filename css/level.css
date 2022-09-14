@@ -226,6 +226,7 @@ input:checked + span{
   cursor: pointer;
   margin: 5px;
   vertical-align:middle;
+  float: right;
 }
 
 .plus0:hover{
@@ -274,6 +275,7 @@ input:checked + span{
   cursor: pointer;
   margin: 5px;
   vertical-align:middle;
+  float: left;
 }
 
 .minus0:hover{
@@ -329,4 +331,38 @@ input:checked + span{
   transition-duration: 0.5s;
   filter: brightness(1);
   background-color: rgb(0,202,253);
+}
+
+#year1{
+  float: left;
+}
+
+#year2{
+  float: right;
+}
+
+#year3{
+  float: left;
+}
+
+#year5{
+  float: right;
+}
+
+#year6{
+  float: left;
+}
+
+#year7{
+  float: right;
+}
+
+#year8{
+  clear: left;
+  float: left;
+}
+
+#year9{
+  clear: right;
+  float: right;
 }

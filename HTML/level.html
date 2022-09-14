@@ -4,8 +4,8 @@
   <meta charset="UTF-8">
   <title>Title</title>
   <link rel="stylesheet" href="css/bootstrap/bootstrap.min.css"/>
-  <script src="../js/Level0.js" defer></script>
-  <link rel="stylesheet" href="../css/Level0.css">
+  <script src="../js/level.js" defer></script>
+  <link rel="stylesheet" href="../css/level.css">
   <script src="../js/main.js" defer></script>
   <link rel="stylesheet" href="../css/Button.css">
 </head>
@@ -25,7 +25,7 @@
   </div>
 </div>
 <form id="msform">
-  <div id="remind" style="display: none; color:white"></div>
+  <div id="plate" style="display: none; color:white"></div>
 
   <fieldset id="fieldset1">
     <h1>Use your flipper: plus and minus for around</h1>
@@ -54,14 +54,14 @@
     <h1>Time for daily training</h1>
     <br>
     <br>
-    <input class="plus0" onclick="plus0()" value="plus +" type="button" style="float: right">
+    <input class="plus0" onclick="plus0()" value="plus +" type="button">
     <input name="next" class="next action-button" onclick="countdown0()" value="start" type="button" >
-    <input class="minus0" onclick="minus0()" value="minus -" type="button" style="float:left">
+    <input class="minus0" onclick="minus0()" value="minus -" type="button">
   </fieldset>
   <fieldset id="fieldset3">
 <div style="width: 100%; height: 300px">
     <div style="float: left">
-      <h2 class="fs-title">Which eye : Both eyes</h2>
+      <h2 id="fieldset3-eye" class="fs-title">Which eye : Both eyes</h2>
       <h2 id="fieldset3-symbol" class="fs-title">Number of flips : - 1.00</h2>
       <br>
       <br>
@@ -115,8 +115,8 @@
 
     <br>
     <br>
-    <input id="year1" class="year"  value="ages : 0-30 years" onclick="fieldset4old()" type="button" style="float: left">
-    <input id="year2" class="year" value="ages : 31 years and up" onclick="fieldset4old2()" type="button" style="float: right">
+    <input id="year1" class="year"  value="ages : 0-30 years" onclick="fieldset4old()" type="button">
+    <input id="year2" class="year" value="ages : 31 years and up" onclick="fieldset4old2()" type="button">
   </fieldset>
 
   <fieldset id="fieldset5">
@@ -124,58 +124,19 @@
 
     <br>
     <br>
-    <input id="year3" class="year" value="ages : 0-20 years" onclick="fieldset5old()" type="button" style="float: left">
+    <input id="year3" class="year" value="ages : 0-20 years" onclick="fieldset5old()" type="button">
     <input id="year4" class="year" value="ages : 21-40 years" onclick="fieldset5old2()" type="button">
-    <input id="year5" class="year" value="ages : 41 years and up" onclick="fieldset5old3()" type="button" style="float: right">
+    <input id="year5" class="year" value="ages : 41 years and up" onclick="fieldset5old3()" type="button">
   </fieldset>
   <fieldset id="fieldset6">
+    <h1>Choose your age from the options below</h1>
 
-      <div style="width: 100%; height: 300px">
-        <div style="float: left">
-          <h2 class="fs-title">Which eye : Both eyes</h2>
-          <h2 class="fs-title">Number of flips : + 1.00</h2>
-          <br>
-          <br>
-          <br>
-          <br>
-          <br>
-          <p id="title4">ertyu</p>
-          <br>
-        </div>
-        <div style="float: right">
-          <p>Select the same text in the following selection</p>
-          <br>
-          <label class="cover">
-            <input type="checkBox"  name="level0statement3" id="16" onclick="selectCheckThree(this)" class="level0"><span class="level00" for="11">uytre</span>
-          </label>
-          <br>
-          <br>
-          <label class="cover">
-            <input type="checkBox"  name="level0statement3" id="17" onclick="selectCheckThree(this)" class="level0"><span class="level00" for="12">rtyue</span>
-          </label>
-          <br>
-          <br>
-          <label class="cover">
-            <input type="checkBox"  name="level0statement3" id="18" onclick="selectCheckThree(this)" class="level0"><span class="level00" for="13">rtyeu</span>
-          </label>
-          <br>
-          <br>
-          <label class="cover">
-            <input type="checkBox"  name="level0statement3" id="19" onclick="selectCheckThree(this)" class="level0"><span class="level00" for="14">tryue</span>
-          </label>
-          <br>
-          <br>
-          <label class="cover">
-            <input type="checkBox"  name="level0statement3" id="20" onclick="selectCheckThree(this)" class="level0"><span class="level00" for="15">ertyu</span>
-          </label>
-        </div>
-      </div>
-      <br>
-      <br>
-
-      <input type="button" id="next4" name="next" class="next action-button" value="Next" />
-      <input type="button" id="previous3" name="previous" class="previous action-button" value="Previous" />
-
+    <br>
+    <br>
+    <input id="year6" class="year" value="ages : 0-20 years" onclick="fieldset6old()" type="button">
+    <input id="year7" class="year" value="ages : 21-30 years" onclick="fieldset6old2()" type="button">
+    <input id="year8" class="year" value="ages : 31-40 years" onclick="fieldset6old3()" type="button">
+    <input id="year9" class="year" value="ages : 41 years and up" onclick="fieldset6old4()" type="button">
   </fieldset>
 
   <fieldset id="fieldset7">

@@ -22,16 +22,18 @@ checks.push(checkbox4)
 checks.push(checkbox5)
 
 let symbol1 = "Number of flips : - 1.00";
+let eye1 = 0;
 let fieldset3symbol = document.getElementById('fieldset3-symbol');
+let fieldset3eye = document.getElementById('fieldset3-eye');
 
 
 document.getElementById('next').onclick = () => next();
 
 
-var counterVal = 0;
+let counterVal = 0;
 let timeout=0;
 let countdownTimer;
-let remind = document.getElementById("remind");
+let plate = document.getElementById("plate");
 
 function next0(){
   document.getElementById('fieldset1').style.display = 'none';
@@ -45,6 +47,11 @@ function next1(){
 
 function next2(){
   document.getElementById('fieldset5').style.display = 'none';
+  document.getElementById('fieldset3').style.display = 'block';
+}
+
+function next3(){
+  document.getElementById('fieldset6').style.display = 'none';
   document.getElementById('fieldset3').style.display = 'block';
 }
 
@@ -147,21 +154,41 @@ function refreshTime0(){
   next2();
 }
 
-function countdownForShapes(time){
-  remind.style.display = "inline";
+function fieldset6old(){
+  age = 11;
+  next3();
+}
+
+function fieldset6old2(){
+  age = 25;
+  next3();
+}
+
+function fieldset6old3(){
+  age = 35;
+  next3();
+}
+
+function fieldset6old4(){
+  age = 60;
+  next3();
+}
+
+function countdownForFlippers(time){
+  plate.style.display = "inline";
   document.getElementById('fieldset3').style.display = 'none';
-  let timerForShapes = setInterval(function () {
+  let timerForFlippers = setInterval(function () {
     if (time>0){
-      remind.innerHTML="Level "+level+" will be "+time+" seconds to show";
+      plate.innerHTML="Level "+level+" will be "+time+" seconds to show";
       time--;
     }
     else if (time<=0){
-      clearInterval(timerForShapes);
+      clearInterval(timerForFlippers);
       if (level < 2){
         document.getElementById('fieldset3').style.display = 'block';
       }
       change();
-      remind.style.display="none";
+      plate.style.display="none";
     }
   },1000);
 }
@@ -182,21 +209,33 @@ function change(){
     document.getElementById('fieldset3-symbol').innerHTML=symbol1;
     document.getElementById('fieldset5').style.display = 'block';
   }
+ else if (level === 4){
+    symbol1="Number of flips : + 3.00";
+    document.getElementById('fieldset3-symbol').innerHTML=symbol1;
+    document.getElementById('fieldset6').style.display = 'block';
+  }
+  else if (level === 5){
+    symbol1="Number of flips : + 1.00";
+    eye1 = "Which eye : right eye";
+    document.getElementById('fieldset3-symbol').innerHTML=symbol1;
+    document.getElementById('fieldset3-eye').innerHTML=eye1;
+    document.getElementById('fieldset3').style.display = 'block';
+  }
 }
 
 window.onload= function (){
   document.getElementById('fieldset3-symbol').innerHTML = symbol1;
 
 
-  var oPtxt=document.getElementById("title");
+  let oPtxt=document.getElementById("title");
 
-  var oPtxt1 = document.getElementById('title1');
+  let oPtxt1 = document.getElementById('title1');
 
-  var oBtn1=document.getElementById("Btn1");
+  let oBtn1=document.getElementById("Btn1");
 
-  var oBtn2=document.getElementById("Btn2");
+  let oBtn2=document.getElementById("Btn2");
 
-  var num = 14; /*定义一个初始变量*/
+  let num = 14; /*定义一个初始变量*/
 
   oBtn1.onclick = function(){
 
@@ -275,43 +314,73 @@ if (checks[1].checked){
    if (counterVal === 1 && level === 0){
      level = 1;
      alert("congratulations, you passed level 0")
-     countdownForShapes(5);
+     countdownForFlippers(3);
      document.getElementById('level').innerHTML = 'Level : ' + level;
    }
      if (counterVal === 2 && level === 1){
        level = 2;
        alert("congratulations, you passed level 1")
-       countdownForShapes(5);
+       countdownForFlippers(3);
        document.getElementById('level').innerHTML = 'Level : ' + level;
      }
-     if (counterVal === 3 && level === 2 && age <= 30){
+     if (counterVal === 4 && level === 2 && age <= 30){
        level = 3;
        alert("congratulations, you passed level 2")
-       countdownForShapes(5);
+       countdownForFlippers(3);
        document.getElementById('level').innerHTML = 'Level : ' + level;
      }
-     if (counterVal === 4 && level === 2 && age >= 31){
+     if (counterVal === 3 && level === 2 && age >= 31){
        level = 3;
        alert("congratulations, you passed level 2")
-       countdownForShapes(5);
+       countdownForFlippers(3);
        document.getElementById('level').innerHTML = 'Level : ' + level;
      }
-  if (counterVal === 5 && level === 3 && age <= 20){
+  if (counterVal === 7 && level === 3 && age <= 20){
     level = 4;
     alert("congratulations, you passed level 3")
-    countdownForShapes(5);
+    countdownForFlippers(3);
     document.getElementById('level').innerHTML = 'Level : ' + level;
   }
   if (counterVal === 6 && level === 3 && 21 <= age <= 40){
     level = 4;
     alert("congratulations, you passed level 3")
-    countdownForShapes(5);
+    countdownForFlippers(3);
     document.getElementById('level').innerHTML = 'Level : ' + level;
   }
-  if (counterVal === 7 && level === 3 && age <= 41){
+  if (counterVal === 5 && level === 3 && age >= 41){
     level = 4;
     alert("congratulations, you passed level 3")
-    countdownForShapes(5);
+    countdownForFlippers(3);
+    document.getElementById('level').innerHTML = 'Level : ' + level;
+  }
+  if (counterVal === 11 && level === 4 && age <= 20){
+    level = 5;
+    alert("congratulations, you passed level 4")
+    countdownForFlippers(3);
+    document.getElementById('level').innerHTML = 'Level : ' + level;
+  }
+  if (counterVal === 10 && level === 4 && 21 <= age <= 30){
+    level = 5;
+    alert("congratulations, you passed level 4")
+    countdownForFlippers(3);
+    document.getElementById('level').innerHTML = 'Level : ' + level;
+  }
+  if (counterVal === 9 && level === 4 && 31 <= age <= 40){
+    level = 5;
+    alert("congratulations, you passed level 4")
+    countdownForFlippers(3);
+    document.getElementById('level').innerHTML = 'Level : ' + level;
+  }
+  if (counterVal === 8 && level === 4 && age >= 41){
+    level = 5;
+    alert("congratulations, you passed level 4")
+    countdownForFlippers(3);
+    document.getElementById('level').innerHTML = 'Level : ' + level;
+  }
+  if (counterVal === 12 && level === 5){
+    level = 6;
+    alert("congratulations, you passed level 5")
+    countdownForFlippers(3);
     document.getElementById('level').innerHTML = 'Level : ' + level;
   }
 }
@@ -374,44 +443,76 @@ else if (number6 === 1){
   }
 }
 
-function symbol(){
-  if (level===0){
-    if (symbol1 === "Number of flips : + 1.00"){
+function symbol() {
+  if (level === 0) {
+    if (symbol1 === "Number of flips : + 1.00") {
       symbol1 = "Number of flips : - 1.00"
       fieldset3symbol.innerHTML = symbol1;
-    }
-    else if (symbol1 === "Number of flips : - 1.00"){
+    } else if (symbol1 === "Number of flips : - 1.00") {
       symbol1 = "Number of flips : + 1.00"
       fieldset3symbol.innerHTML = symbol1;
     }
-  }
-  else if (level===1){
-    if (symbol1 === "Number of flips : - 1.50"){
+  } else if (level === 1) {
+    if (symbol1 === "Number of flips : - 1.50") {
+      symbol1 = "Number of flips : + 1.50";
+      fieldset3symbol.innerHTML = symbol1;
+    } else if (symbol1 === "Number of flips : + 1.50") {
+      symbol1 = "Number of flips : - 1.50"
+      fieldset3symbol.innerHTML = symbol1;
+    }else if (symbol1 === "Number of flips : - 1.50") {
       symbol1 = "Number of flips : + 1.50"
       fieldset3symbol.innerHTML = symbol1;
-    }
-    else if (symbol1 === "Number of flips : + 1.50"){
+    }else if (symbol1 === "Number of flips : + 1.50") {
       symbol1 = "Number of flips : - 1.50"
       fieldset3symbol.innerHTML = symbol1;
     }
-  }
-  else if (level===2){
-    if (symbol1 === "Number of flips : - 2.00"){
-      symbol1 = "Number of flips : + 2.00"
+  } else if (level === 2) {
+    if (symbol1 === "Number of flips : - 2.00" ) {
+      symbol1 = "Number of flips : + 2.00";
       fieldset3symbol.innerHTML = symbol1;
-    }
-    else if (symbol1 === "Number of flips : + 2.00"){
+
+    } else if (symbol1 === "Number of flips : + 2.00") {
       symbol1 = "Number of flips : - 2.00"
       fieldset3symbol.innerHTML = symbol1;
     }
-  }
-  else if (level===3) {
+  } else if (level === 3) {
     if (symbol1 === "Number of flips : - 2.50") {
       symbol1 = "Number of flips : + 2.50"
       fieldset3symbol.innerHTML = symbol1;
     } else if (symbol1 === "Number of flips : + 2.50") {
       symbol1 = "Number of flips : - 2.50"
       fieldset3symbol.innerHTML = symbol1;
+    }
+  } else if (level === 4) {
+    if (symbol1 === "Number of flips : - 3.00") {
+      symbol1 = "Number of flips : + 3.00"
+      fieldset3symbol.innerHTML = symbol1;
+    } else if (symbol1 === "Number of flips : + 3.00") {
+      symbol1 = "Number of flips : - 3.00"
+      fieldset3symbol.innerHTML = symbol1;
+    }
+  }
+  else if (level === 5) {
+    if (symbol1 === "Number of flips : + 1.00" && eye1 === "Which eye : right eye") {
+      eye1 = "Which eye : right eye";
+      symbol1 = "Number of flips : - 1.00"
+      fieldset3symbol.innerHTML = symbol1;
+      fieldset3eye.innerHTML = eye1;
+    } else if (symbol1 === "Number of flips : - 1.00" && eye1 === "Which eye : right eye") {
+      symbol1 = "Number of flips : + 1.00"
+      eye1 = "Which eye : left eye"
+      fieldset3symbol.innerHTML = symbol1;
+      fieldset3eye.innerHTML = eye1;
+    }else if (symbol1 === "Number of flips : + 1.00" && eye1 === "Which eye : left eye") {
+      symbol1 = "Number of flips : - 1.00"
+      eye1 = "Which eye : left eye"
+      fieldset3symbol.innerHTML = symbol1;
+      fieldset3eye.innerHTML = eye1;
+    }else if (symbol1 === "Number of flips : - 1.00" && eye1 === "Which eye : left eye") {
+      symbol1 = "Number of flips : + 1.00"
+      eye1 = "Which eye : right eye"
+      fieldset3symbol.innerHTML = symbol1;
+      fieldset3eye.innerHTML = eye1;
     }
   }
 }
