@@ -57,16 +57,16 @@ function next3(){
 
 function selectCheckOne(obj){
   if(obj.checked){
-    for( var i=0;i<checks.length;i++){
+    for( let i=0;i<checks.length;i++){
       checks[i].checked=false;
     }
     obj.checked=true;
   }else{
-    for( var i=0;i<checks.length;i++){
+    for( let i=0;i<checks.length;i++){
       checks[i].checked=false;
     }
   }
-  var button = document.getElementById("next")
+  let button = document.getElementById("next")
   button.style.display = "block";
 }
 
@@ -151,7 +151,6 @@ function jump(){
   eye1 = "Which eye : right eye";
   document.getElementById('fieldset3-symbol').innerHTML=symbol1;
   document.getElementById('fieldset3-eye').innerHTML=eye1;
-  counterVal =
   countdown();
 }
 
