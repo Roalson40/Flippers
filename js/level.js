@@ -365,83 +365,96 @@ if (checks[1].checked){
     }
    }
    words();
-   if (counterVal === 1 && level === 0){
+   if (counterVal === 2 && level === 0){
      level = 1;
      alert("congratulations, you passed level 0")
      countdownForFlippers(3);
      document.getElementById('level').innerHTML = 'Level : ' + level;
+     resetCounter();
    }
      if (counterVal === 2 && level === 1){
        level = 2;
        alert("congratulations, you passed level 1")
        countdownForFlippers(3);
        document.getElementById('level').innerHTML = 'Level : ' + level;
+       resetCounter();
      }
-     if (counterVal === 4 && level === 2 && age <= 30){
+     if (counterVal === 2 && level === 2 && age <= 30){
        level = 3;
        alert("congratulations, you passed level 2")
        countdownForFlippers(3);
        document.getElementById('level').innerHTML = 'Level : ' + level;
+       resetCounter();
      }
-     if (counterVal === 3 && level === 2 && age >= 31){
+     if (counterVal === 2 && level === 2 && age >= 31){
        level = 3;
        alert("congratulations, you passed level 2")
        countdownForFlippers(3);
        document.getElementById('level').innerHTML = 'Level : ' + level;
+       resetCounter();
      }
-  if (counterVal === 7 && level === 3 && age <= 20){
+  if (counterVal === 2 && level === 3 && age <= 20){
     level = 4;
     alert("congratulations, you passed level 3")
     countdownForFlippers(3);
     document.getElementById('level').innerHTML = 'Level : ' + level;
+    resetCounter();
   }
-  if (counterVal === 6 && level === 3 && 21 <= age <= 40){
+  if (counterVal === 2 && level === 3 && 21 <= age <= 40){
     level = 4;
     alert("congratulations, you passed level 3")
     countdownForFlippers(3);
     document.getElementById('level').innerHTML = 'Level : ' + level;
+    resetCounter();
   }
-  if (counterVal === 5 && level === 3 && age >= 41){
+  if (counterVal === 2 && level === 3 && age >= 41){
     level = 4;
     alert("congratulations, you passed level 3")
     countdownForFlippers(3);
     document.getElementById('level').innerHTML = 'Level : ' + level;
+    resetCounter();
   }
-  if (counterVal === 11 && level === 4 && age <= 20){
+  if (counterVal === 2 && level === 4 && age <= 20){
     level = 5;
     alert("congratulations, you passed level 4")
     countdownForFlippers(3);
     document.getElementById('level').innerHTML = 'Level : ' + level;
+    resetCounter();
   }
-  if (counterVal === 10 && level === 4 && 21 <= age <= 30){
+  if (counterVal === 2 && level === 4 && 21 <= age <= 30){
     level = 5;
     alert("congratulations, you passed level 4")
     countdownForFlippers(3);
     document.getElementById('level').innerHTML = 'Level : ' + level;
+    resetCounter();
   }
-  if (counterVal === 9 && level === 4 && 31 <= age <= 40){
+  if (counterVal === 2 && level === 4 && 31 <= age <= 40){
     level = 5;
     alert("congratulations, you passed level 4")
     countdownForFlippers(3);
     document.getElementById('level').innerHTML = 'Level : ' + level;
+    resetCounter();
   }
-  if (counterVal === 8 && level === 4 && age >= 41){
+  if (counterVal === 2 && level === 4 && age >= 41){
     level = 5;
     alert("congratulations, you passed level 4")
     countdownForFlippers(3);
     document.getElementById('level').innerHTML = 'Level : ' + level;
+    resetCounter();
   }
-  if (counterVal === 12 && level === 5){
+  if (counterVal === 2 && level === 5){
     level = 6;
     alert("congratulations, you passed level 5")
     countdownForFlippers(3);
     document.getElementById('level').innerHTML = 'Level : ' + level;
+    resetCounter();
   }
-  if (counterVal === 13 && level === 6){
+  if (counterVal === 2 && level === 6){
     level = 7;
     alert("congratulations, you passed level 6")
     countdownForFlippers(3);
     document.getElementById('level').innerHTML = 'Level : ' + level;
+    resetCounter();
   }
 }
 
