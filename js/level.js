@@ -35,6 +35,22 @@ let timeout=0;
 let countdownTimer;
 let plate = document.getElementById("plate");
 
+function restart(){
+  alert("do you want to restart?")
+  level = 0;
+  document.getElementById('level').innerHTML = 'level : ' + level;
+  timeout=0;
+  clearInterval(countdownTimer);
+  refreshTime0();
+  resetCounter();
+  document.getElementById("fieldset3").style.display = 'none';
+  document.getElementById("fieldset4").style.display = 'none';
+  document.getElementById("fieldset5").style.display = 'none';
+  document.getElementById("fieldset6").style.display = 'none';
+  document.getElementById("fieldset7").style.display = 'none';
+  document.getElementById("fieldset1").style.display = 'block';
+}
+
 function next0(){
   document.getElementById('fieldset1').style.display = 'none';
   document.getElementById('fieldset2').style.display = 'block';

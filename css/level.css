@@ -16,7 +16,7 @@ body {
 }
 /*form styles*/
 #msform {
-  width: 1000px;
+  width: 100%;
   margin: 100px auto;
   text-align: center;
   justify-content: center;
@@ -30,9 +30,14 @@ body {
   box-shadow: 0 0 15px 1px rgba(0, 0, 0, 0.4);
   padding: 20px 30px;
   box-sizing: border-box;
-  width: 80%;
-  margin: 0 10%;
-
+  width: 50%;
+  min-width: 650px;
+  overflow-x: auto;
+  margin: auto;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
   /*stacking fieldsets above each other*/
   position: relative;
 }
@@ -53,6 +58,7 @@ body {
   cursor: pointer;
   padding: 10px 5px;
   margin: 10px 5px;
+  font-size: 15px;
 }
 #msform .action-button:hover, #msform .action-button:focus {
   box-shadow: 0 0 0 2px white, 0 0 0 3px #27AE60;
@@ -175,7 +181,7 @@ input:checked + span{
 }
 
 #Btn1{
-  width: 100px;
+  width: 135px;
   background: rgba(255,183,0,0.7);
   font-weight: bold;
   color: white;
@@ -184,6 +190,7 @@ input:checked + span{
   cursor: pointer;
   padding: 10px 5px;
   margin: 10px 5px;
+  font-size: 15px;
 }
 
 #Btn1:hover{
@@ -194,7 +201,7 @@ input:checked + span{
 }
 
 #Btn2{
-  width: 100px;
+  width: 135px;
   background: rgba(255,183,0,0.7);
   font-weight: bold;
   color: white;
@@ -203,6 +210,7 @@ input:checked + span{
   cursor: pointer;
   padding: 10px 5px;
   margin: 10px 5px;
+  font-size: 15px;
 }
 
 #Btn2:hover{
