@@ -389,3 +389,11 @@ input:checked + span{
   clear: right;
   float: right;
 }
+
+#year10{
+  float: left;
+}
+
+#year11{
+  float: right;
+}

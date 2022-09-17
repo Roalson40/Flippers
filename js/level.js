@@ -55,6 +55,11 @@ function next3(){
   document.getElementById('fieldset3').style.display = 'block';
 }
 
+function next4(){
+  document.getElementById('fieldset7').style.display = 'none';
+  document.getElementById('fieldset3').style.display = 'block';
+}
+
 function selectCheckOne(obj){
   if(obj.checked){
     for( let i=0;i<checks.length;i++){
@@ -106,7 +111,7 @@ function countdown(){
 }
 
 function destroy0(){
-  if (level <= 2 || level === 5 || level === 6){
+  if (level <= 2 || 5 <= level <= 7){
     alert("daily training finished");
     alert("try again");
     window.location.href = "start.html";
@@ -217,6 +222,16 @@ function fieldset6old4(){
   next3();
 }
 
+function fieldset7old(){
+  age = 11;
+  next4();
+}
+
+function fieldset7old2(){
+  age = 50;
+  next4();
+}
+
 function countdownForFlippers(time){
   plate.style.display = "inline";
   document.getElementById('fieldset3').style.display = 'none';
@@ -274,6 +289,13 @@ function change(){
     document.getElementById('fieldset3-symbol').innerHTML=symbol1;
     document.getElementById('fieldset3-eye').innerHTML=eye1;
     document.getElementById('fieldset3').style.display = 'block';
+  }
+  else if (level === 7){
+    symbol1="Number of flips : + 2.00";
+    eye1 = "Which eye : right eye";
+    document.getElementById('fieldset3-symbol').innerHTML=symbol1;
+    document.getElementById('fieldset3-eye').innerHTML=eye1;
+    document.getElementById('fieldset7').style.display = 'block';
   }
 }
 
@@ -456,6 +478,20 @@ if (checks[1].checked){
     document.getElementById('level').innerHTML = 'Level : ' + level;
     resetCounter();
   }
+  if (counterVal === 2 && level === 7 && age <= 30){
+    level = 8;
+    alert("congratulations, you passed level 7")
+    countdownForFlippers(3);
+    document.getElementById('level').innerHTML = 'Level : ' + level;
+    resetCounter();
+  }
+  if (counterVal === 2 && level === 7 && age >= 31){
+    level = 8;
+    alert("congratulations, you passed level 7")
+    countdownForFlippers(3);
+    document.getElementById('level').innerHTML = 'Level : ' + level;
+    resetCounter();
+  }
 }
 
 
@@ -610,5 +646,28 @@ function symbol() {
       fieldset3symbol.innerHTML = symbol1;
       fieldset3eye.innerHTML = eye1;
     }
+  }
+    else if (level === 7) {
+      if (symbol1 === "Number of flips : + 2.00" && eye1 === "Which eye : right eye") {
+        eye1 = "Which eye : right eye";
+        symbol1 = "Number of flips : - 2.00"
+        fieldset3symbol.innerHTML = symbol1;
+        fieldset3eye.innerHTML = eye1;
+      } else if (symbol1 === "Number of flips : - 2.00" && eye1 === "Which eye : right eye") {
+        symbol1 = "Number of flips : + 2.00"
+        eye1 = "Which eye : left eye"
+        fieldset3symbol.innerHTML = symbol1;
+        fieldset3eye.innerHTML = eye1;
+      } else if (symbol1 === "Number of flips : + 2.00" && eye1 === "Which eye : left eye") {
+        symbol1 = "Number of flips : - 2.00"
+        eye1 = "Which eye : left eye"
+        fieldset3symbol.innerHTML = symbol1;
+        fieldset3eye.innerHTML = eye1;
+      } else if (symbol1 === "Number of flips : - 2.00" && eye1 === "Which eye : left eye") {
+        symbol1 = "Number of flips : + 2.00"
+        eye1 = "Which eye : right eye"
+        fieldset3symbol.innerHTML = symbol1;
+        fieldset3eye.innerHTML = eye1;
+      }
   }
 }
