@@ -76,6 +76,16 @@ function next4(){
   document.getElementById('fieldset3').style.display = 'block';
 }
 
+function next5(){
+  document.getElementById('fieldset8').style.display = 'none';
+  document.getElementById('fieldset3').style.display = 'block';
+}
+
+function next6(){
+  document.getElementById('fieldset9').style.display = 'none';
+  document.getElementById('fieldset3').style.display = 'block';
+}
+
 function selectCheckOne(obj){
   if(obj.checked){
     for( let i=0;i<checks.length;i++){
@@ -136,7 +146,7 @@ function destroy0(){
     refreshTime0();
     resetCounter();
   }
-  else if (level === 3 || level === 4){
+  else if (level === 3 || level === 4 || level === 8 || level ===9){
     if (age <= 40){
       alert("daily training finished");
       alert("try again");
@@ -248,6 +258,40 @@ function fieldset7old2(){
   next4();
 }
 
+function fieldset8old(){
+  age = 14;
+  next5();
+}
+
+function fieldset8old2(){
+  age = 27;
+  next5();
+}
+
+function fieldset8old3(){
+  age = 70;
+  next5();
+}
+
+function fieldset9old(){
+  age = 14;
+  next6();
+}
+
+function fieldset9old2(){
+  age = 27;
+  next6();
+}
+
+function fieldset9old3(){
+  age = 39;
+  next6();
+}
+
+function fieldset9old4(){
+  age = 60;
+  next6();
+}
 function countdownForFlippers(time){
   plate.style.display = "inline";
   document.getElementById('fieldset3').style.display = 'none';
@@ -312,6 +356,20 @@ function change(){
     document.getElementById('fieldset3-symbol').innerHTML=symbol1;
     document.getElementById('fieldset3-eye').innerHTML=eye1;
     document.getElementById('fieldset7').style.display = 'block';
+  }
+  else if (level === 8){
+    symbol1="Number of flips : + 2.50";
+    eye1 = "Which eye : right eye";
+    document.getElementById('fieldset3-symbol').innerHTML=symbol1;
+    document.getElementById('fieldset3-eye').innerHTML=eye1;
+    document.getElementById('fieldset8').style.display = 'block';
+  }
+  else if (level === 9){
+    symbol1="Number of flips : + 3.00";
+    eye1 = "Which eye : right eye";
+    document.getElementById('fieldset3-symbol').innerHTML=symbol1;
+    document.getElementById('fieldset3-eye').innerHTML=eye1;
+    document.getElementById('fieldset9').style.display = 'block';
   }
 }
 
@@ -508,6 +566,47 @@ if (checks[1].checked){
     document.getElementById('level').innerHTML = 'Level : ' + level;
     resetCounter();
   }
+  if (counterVal === 2 && level === 8 && age <= 20){
+    level = 9;
+    alert("congratulations, you passed level 8")
+    countdownForFlippers(3);
+    document.getElementById('level').innerHTML = 'Level : ' + level;
+    resetCounter();
+  }
+  if (counterVal === 2 && level === 8 && 21 <= age <= 40){
+    level = 9;
+    alert("congratulations, you passed level 8")
+    countdownForFlippers(3);
+    document.getElementById('level').innerHTML = 'Level : ' + level;
+    resetCounter();
+  }
+  if (counterVal === 2 && level === 8 && age >= 41){
+    level = 9;
+    alert("congratulations, you passed level 8")
+    countdownForFlippers(3);
+    document.getElementById('level').innerHTML = 'Level : ' + level;
+    resetCounter();
+  }
+  if (counterVal === 2 && level === 9 && age <= 20){
+    alert("congratulations, you passed level 9")
+    document.getElementById('level').innerHTML = 'Level : ' + level;
+    resetCounter();
+  }
+  if (counterVal === 2 && level === 9 && 21 <= age <= 30){
+    alert("congratulations, you passed level 9")
+    document.getElementById('level').innerHTML = 'Level : ' + level;
+    resetCounter();
+  }
+  if (counterVal === 2 && level === 9 && 31 <= age <= 40){
+    alert("congratulations, you passed level 9")
+    document.getElementById('level').innerHTML = 'Level : ' + level;
+    resetCounter();
+  }
+  if (counterVal === 2 && level === 9 && age >= 41){
+    alert("congratulations, you passed level 9")
+    document.getElementById('level').innerHTML = 'Level : ' + level;
+    resetCounter();
+  }
 }
 
 
@@ -663,7 +762,7 @@ function symbol() {
       fieldset3eye.innerHTML = eye1;
     }
   }
-    else if (level === 7) {
+  else if (level === 7) {
       if (symbol1 === "Number of flips : + 2.00" && eye1 === "Which eye : right eye") {
         eye1 = "Which eye : right eye";
         symbol1 = "Number of flips : - 2.00"
@@ -685,5 +784,51 @@ function symbol() {
         fieldset3symbol.innerHTML = symbol1;
         fieldset3eye.innerHTML = eye1;
       }
+  }
+  else if (level === 8) {
+    if (symbol1 === "Number of flips : + 2.50" && eye1 === "Which eye : right eye") {
+      eye1 = "Which eye : right eye";
+      symbol1 = "Number of flips : - 2.50"
+      fieldset3symbol.innerHTML = symbol1;
+      fieldset3eye.innerHTML = eye1;
+    } else if (symbol1 === "Number of flips : - 2.50" && eye1 === "Which eye : right eye") {
+      symbol1 = "Number of flips : + 2.50"
+      eye1 = "Which eye : left eye"
+      fieldset3symbol.innerHTML = symbol1;
+      fieldset3eye.innerHTML = eye1;
+    } else if (symbol1 === "Number of flips : + 2.50" && eye1 === "Which eye : left eye") {
+      symbol1 = "Number of flips : - 2.50"
+      eye1 = "Which eye : left eye"
+      fieldset3symbol.innerHTML = symbol1;
+      fieldset3eye.innerHTML = eye1;
+    } else if (symbol1 === "Number of flips : - 2.50" && eye1 === "Which eye : left eye") {
+      symbol1 = "Number of flips : + 2.50"
+      eye1 = "Which eye : right eye"
+      fieldset3symbol.innerHTML = symbol1;
+      fieldset3eye.innerHTML = eye1;
+    }
+  }
+  else if (level === 9) {
+    if (symbol1 === "Number of flips : + 3.00" && eye1 === "Which eye : right eye") {
+      eye1 = "Which eye : right eye";
+      symbol1 = "Number of flips : - 3.00"
+      fieldset3symbol.innerHTML = symbol1;
+      fieldset3eye.innerHTML = eye1;
+    } else if (symbol1 === "Number of flips : - 3.00" && eye1 === "Which eye : right eye") {
+      symbol1 = "Number of flips : + 3.00"
+      eye1 = "Which eye : left eye"
+      fieldset3symbol.innerHTML = symbol1;
+      fieldset3eye.innerHTML = eye1;
+    } else if (symbol1 === "Number of flips : + 3.00" && eye1 === "Which eye : left eye") {
+      symbol1 = "Number of flips : - 3.00"
+      eye1 = "Which eye : left eye"
+      fieldset3symbol.innerHTML = symbol1;
+      fieldset3eye.innerHTML = eye1;
+    } else if (symbol1 === "Number of flips : - 3.00" && eye1 === "Which eye : left eye") {
+      symbol1 = "Number of flips : + 3.00"
+      eye1 = "Which eye : right eye"
+      fieldset3symbol.innerHTML = symbol1;
+      fieldset3eye.innerHTML = eye1;
+    }
   }
 }

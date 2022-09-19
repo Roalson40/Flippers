@@ -405,3 +405,29 @@ input:checked + span{
 #year11{
   float: right;
 }
+
+#year12{
+  float: left;
+}
+
+#year14{
+  float: right;
+}
+
+#year15{
+  float: left;
+}
+
+#year16{
+  float: right;
+}
+
+#year17{
+  clear: left;
+  float: left;
+}
+
+#year18{
+  clear: right;
+  float: right;
+}
