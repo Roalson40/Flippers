@@ -103,6 +103,22 @@ function selectCheckOne(obj){
   button.style.display = "block";
 }
 
+function uncheck(){
+  let box = document.getElementById("1");
+  box.checked = false;
+  let box2 = document.getElementById("2");
+  box.checked = false;
+  let box3 = document.getElementById("3");
+  box.checked = false;
+  let box4 = document.getElementById("4");
+  box.checked = false;
+  let box5 = document.getElementById("5");
+  box.checked = false;
+  box2.checked = false;
+  box3.checked = false;
+  box4.checked = false;
+  box5.checked = false;
+}
 
 function incrementClick0() {
 
@@ -462,6 +478,11 @@ if (checks[1].checked){
       incrementClick0();
     }
    }
+   if (!(checkbox1.checked && checkbox2.checked && checkbox3.checked && checkbox4.checked
+     && checkbox5.checked)){
+     alert("you need choose one!")
+   }
+   uncheck();
    words();
    if (counterVal === 2 && level === 0){
      level = 1;
@@ -610,9 +631,6 @@ if (checks[1].checked){
     resetCounter();
   }
 }
-
-
-
 
 function words() {
   symbol();
