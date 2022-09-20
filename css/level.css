@@ -130,11 +130,13 @@ body {
   vertical-align:middle;
   font-size: 20px;
 }
+
 .level00{
   font-size: 30px;
   margin-left: 10px;
   font-weight: bolder;
 }
+
 #next{
   display: none;
   float: right;
