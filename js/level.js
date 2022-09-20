@@ -48,6 +48,8 @@ function restart(){
   document.getElementById("fieldset5").style.display = 'none';
   document.getElementById("fieldset6").style.display = 'none';
   document.getElementById("fieldset7").style.display = 'none';
+  document.getElementById("fieldset8").style.display = 'none';
+  document.getElementById("fieldset9").style.display = 'none';
   document.getElementById("fieldset1").style.display = 'block';
 }
 
