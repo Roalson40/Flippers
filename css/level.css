@@ -182,6 +182,17 @@ input:checked + span{
   font-weight: bold;
 }
 
+#plate{
+  display: none;
+  color:white;
+}
+
+#plate1{
+  display: none;
+  font-size: 30px;
+  color:greenyellow;
+}
+
 #Btn1{
   width: 135px;
   background: rgba(255,183,0,0.7);

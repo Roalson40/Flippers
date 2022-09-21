@@ -34,6 +34,7 @@ let counterVal = 0;
 let timeout=0;
 let countdownTimer;
 let plate = document.getElementById("plate");
+let plate1 = document.getElementById("plate1");
 
 function restart(){
   alert("do you want to restart?")
@@ -306,6 +307,7 @@ function fieldset9old4(){
   age = 60;
   next6();
 }
+
 function countdownForFlippers(time){
   plate.style.display = "inline";
   document.getElementById('fieldset3').style.display = 'none';
@@ -325,6 +327,20 @@ function countdownForFlippers(time){
   },1000);
 }
 
+function countdownForFlippers1(time){
+  plate1.style.display = "inline";
+  let timerForFlippers1 = setInterval(function () {
+    if (time>0){
+      plate1.innerHTML="Good job!!!!!!!!!!!";
+      time--;
+    }
+    else if (time<=0){
+      clearInterval(timerForFlippers1);
+      plate1.style.display="none";
+      window.location.href = "start.html";
+    }
+  },1000);
+}
 
 function change(){
   if (level === 0){
@@ -608,23 +624,23 @@ function next() {
     }
     if (counterVal === 2 && level === 9 && age <= 20){
       alert("Congratulations, you passed level 9")
-      alert("You will pass all the levels")
-      window.location.href = "start.html";
+      document.getElementById('fieldset3').style.display = 'none';
+      countdownForFlippers1(3);
     }
     if (counterVal === 2 && level === 9 && 21 <= age <= 30){
       alert("Congratulations, you passed level 9")
-      alert("You will pass all the levels")
-      window.location.href = "start.html";
+      document.getElementById('fieldset3').style.display = 'none';
+      countdownForFlippers1(3);
     }
     if (counterVal === 2 && level === 9 && 31 <= age <= 40){
       alert("Congratulations, you passed level 9")
-      alert("You will pass all the levels")
-      window.location.href = "start.html";
+      document.getElementById('fieldset3').style.display = 'none';
+      countdownForFlippers1(3);
     }
     if (counterVal === 2 && level === 9 && age >= 41){
       alert("Congratulations, you passed level 9")
-      alert("You will pass all the levels")
-      window.location.href = "start.html";
+      document.getElementById('fieldset3').style.display = 'none';
+      countdownForFlippers1(3);
     }
   }
 
