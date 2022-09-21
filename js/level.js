@@ -37,7 +37,7 @@ let plate = document.getElementById("plate");
 let plate1 = document.getElementById("plate1");
 
 function restart(){
-  alert("do you want to restart?")
+  alert("Do you want to restart?")
   level = 0;
   document.getElementById('level').innerHTML = 'level : ' + level;
   timeout=0;
@@ -151,10 +151,14 @@ function countdown(){
   }, 1000);
 }
 
+function stop(){
+  clearTimeout(countdownTimer);
+}
+
 function destroy0(){
   if (level <= 2 || 5 <= level <= 7){
-    alert("daily training finished");
-    alert("try again");
+    alert("Daily training finished");
+    alert("Try again");
     window.location.href = "start.html";
     timeout=0;
     clearInterval(countdownTimer);
@@ -163,8 +167,8 @@ function destroy0(){
   }
   else if (level === 3 || level === 4 || level === 8 || level ===9){
     if (age <= 40){
-      alert("daily training finished");
-      alert("try again");
+      alert("Daily training finished");
+      alert("Try again");
       window.location.href = "start.html";
       timeout=0;
       clearInterval(countdownTimer);
@@ -172,9 +176,9 @@ function destroy0(){
       resetCounter();
     }
     if (age >=41){
-      alert("daily training finished");
-      alert("time is over");
-      alert("do you want to jump to the level 5")
+      alert("Daily training finished");
+      alert("Time is over");
+      alert("Do you want to jump to the level 5")
       timeout=0;
       clearInterval(countdownTimer);
       refreshTime0();
@@ -330,8 +334,12 @@ function countdownForFlippers(time){
 function countdownForFlippers1(time){
   plate1.style.display = "inline";
   let timerForFlippers1 = setInterval(function () {
-    if (time>0){
-      plate1.innerHTML="Good job!!!!!!!!!!!";
+    if (time<=5 && time>3){
+      plate1.innerHTML="You already finish all levels";
+      time--;
+    }
+    else if (time<=3 && time>0){
+      plate1.innerHTML="Good Job!!!!!!!!!!!";
       time--;
     }
     else if (time<=0){
@@ -347,7 +355,7 @@ function change(){
     symbol1="Number of flips : + 1.00";
     document.getElementById('fieldset3-symbol').innerHTML=symbol1;
   }
-  if (level === 1){
+  else if (level === 1){
     symbol1="Number of flips : + 1.50";
     document.getElementById('fieldset3-symbol').innerHTML=symbol1;
   }
@@ -414,7 +422,7 @@ window.onload= function (){
 
   let oBtn2=document.getElementById("Btn2");
 
-  let num = 14; /*定义一个初始变量*/
+  let num = 20; /*定义一个初始变量*/
 
   oBtn1.onclick = function(){
 
@@ -465,7 +473,7 @@ function recursion() {
 function next() {
   if (checkbox1.checked === false && checkbox2.checked === false && checkbox3.checked === false
   && checkbox4.checked === false && checkbox5.checked === false){
-    alert("you need choose one!")
+    alert("You need choose one!")
   }
   else {
     if (number6 === 0){
@@ -531,7 +539,7 @@ function next() {
       document.getElementById('level').innerHTML = 'Level : ' + level;
       resetCounter();
     }
-    if (counterVal === 2 && level === 3 && 21 <= age <= 40){
+    if (counterVal === 2 && level === 3 && 21 <= age && age <= 40){
       level = 4;
       alert("Congratulations, you passed level 3")
       countdownForFlippers(3);
@@ -552,14 +560,14 @@ function next() {
       document.getElementById('level').innerHTML = 'Level : ' + level;
       resetCounter();
     }
-    if (counterVal === 2 && level === 4 && 21 <= age <= 30){
+    if (counterVal === 2 && level === 4 && 21 <= age && age <= 30){
       level = 5;
       alert("Congratulations, you passed level 4")
       countdownForFlippers(3);
       document.getElementById('level').innerHTML = 'Level : ' + level;
       resetCounter();
     }
-    if (counterVal === 2 && level === 4 && 31 <= age <= 40){
+    if (counterVal === 2 && level === 4 && 31 <= age && age <= 40){
       level = 5;
       alert("Congratulations, you passed level 4")
       countdownForFlippers(3);
@@ -608,7 +616,7 @@ function next() {
       document.getElementById('level').innerHTML = 'Level : ' + level;
       resetCounter();
     }
-    if (counterVal === 2 && level === 8 && 21 <= age <= 40){
+    if (counterVal === 2 && level === 8 && 21 <= age && age <= 40){
       level = 9;
       alert("Congratulations, you passed level 8")
       countdownForFlippers(3);
@@ -625,22 +633,26 @@ function next() {
     if (counterVal === 2 && level === 9 && age <= 20){
       alert("Congratulations, you passed level 9")
       document.getElementById('fieldset3').style.display = 'none';
-      countdownForFlippers1(3);
+      stop();
+      countdownForFlippers1(5);
     }
-    if (counterVal === 2 && level === 9 && 21 <= age <= 30){
+    if (counterVal === 2 && level === 9 && 21 <= age && age <= 30){
       alert("Congratulations, you passed level 9")
       document.getElementById('fieldset3').style.display = 'none';
-      countdownForFlippers1(3);
+      stop();
+      countdownForFlippers1(5);
     }
-    if (counterVal === 2 && level === 9 && 31 <= age <= 40){
+    if (counterVal === 2 && level === 9 && 31 <= age && age <= 40){
       alert("Congratulations, you passed level 9")
       document.getElementById('fieldset3').style.display = 'none';
-      countdownForFlippers1(3);
+      stop();
+      countdownForFlippers1(5);
     }
     if (counterVal === 2 && level === 9 && age >= 41){
       alert("Congratulations, you passed level 9")
       document.getElementById('fieldset3').style.display = 'none';
-      countdownForFlippers1(3);
+      stop();
+      countdownForFlippers1(5);
     }
   }
 

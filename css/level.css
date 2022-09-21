@@ -138,28 +138,7 @@ body {
 }
 
 #next{
-  display: none;
   float: right;
-}
-
-#next2{
-  display: none;
-  float: right;
-}
-
-#next3{
-  display: none;
-  float: right;
-}
-
-#previous
-{
-  float: left;
-}
-
-#previous2
-{
-  float: left;
 }
 
 .cover{
@@ -189,8 +168,9 @@ input:checked + span{
 
 #plate1{
   display: none;
-  font-size: 30px;
+  font-size: 100px;
   color:greenyellow;
+  font-family: Blackadder ITC;
 }
 
 #Btn1{
