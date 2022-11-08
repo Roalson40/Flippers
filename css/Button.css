@@ -1,17 +1,38 @@
 .restart{
+  background-color: rgba(18,216,0,0.7);
+  border: none;
+  color: white;
+  padding: 10px;
+  width: 250px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 20px;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: 0.6s;
+  outline: none;
+  margin-left: 20px;
+}
+
+.restart:hover{
+  box-shadow: 0 5px 5px 0 rgb(18,216,0);
+  transform: scale(1.05);
+}
+
+.save{
   height: 50px;
   width: 110px;
   color: white;
   background-color: rgba(18,216,0,0.7);
   float: right;
   margin-right: 50px;
-  margin-left: 50px;
   border-radius: 10px;
   cursor: pointer;
   font-size: 20px;
 }
 
-.restart:hover{
+.save:hover{
   cursor: pointer;
   transition-duration: 0.5s;
   filter: brightness(1);
@@ -34,4 +55,104 @@
   transition-duration: 0.5s;
   filter: brightness(1);
   background-color: rgb(237,20,0);
+}
+
+.exit{
+  height: 50px;
+  width: 110px;
+  color: white;
+  background-color: rgba(255,22,22,0.7);
+  float: right;
+  border-radius: 10px;
+  cursor: pointer;
+  font-size: 30px;
+  margin-top: 20px;
+}
+
+.exit:hover{
+  cursor: pointer;
+  transition-duration: 0.5s;
+  filter: brightness(1);
+  background-color: rgb(255,22,22);
+}
+
+.button-start{
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  margin: auto;
+  display: block;
+  height: 100px;
+  width: 200px;
+  background: radial-gradient(circle, rgba(20,198,144,1)0%, rgba(0,159,212,1)100%);
+  border: none;
+  color: #fff;
+  border-radius: 10px;
+  cursor: pointer;
+  position: relative;
+  font-size: 40px;
+  text-underline: none;
+  transition: all 0.5s;
+}
+
+.button-start:hover, .button-start:focus{
+  box-shadow: 0 0 0 2px white, 0 0 0 5px #01e6ff;
+}
+
+.button-flip{
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  margin: auto;
+  display: block;
+  height: 100px;
+  width: 200px;
+  background: radial-gradient(circle, rgba(24,134,189,1)0%, rgba(20,198,144,1)100%);
+  border: none;
+  color: #fff;
+  border-radius: 10px;
+  cursor: pointer;
+  position: relative;
+  font-size: 30px;
+  text-underline: none;
+  font-family: Arial;
+  transition: all 0.5s;
+}
+
+.button-flip:hover, .button-flip:focus{
+  box-shadow: 0 0 0 2px white, 0 0 0 5px #27AE60;
+}
+
+.button-do{
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  margin: auto;
+  display: block;
+  height: 100px;
+  width: 200px;
+  background: radial-gradient(circle, rgba(20,198,144,1)0%, rgba(0,159,212,1)100%);
+  border: none;
+  color: #fff;
+  border-radius: 10px;
+  cursor: pointer;
+  position: relative;
+  font-size: 40px;
+  text-underline: none;
+  transition: all 0.5s;
+}
+
+.button-do:hover, .button-do:focus{
+  box-shadow: 0 0 0 2px white, 0 0 0 5px #01e6ff;
+}
+
+#stop1{
+  float: left;
+}
+
+#continue1{
+  float: right;
 }

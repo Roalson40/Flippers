@@ -1,83 +1,214 @@
-<!doctype html>
-<html class="no-js" lang="">
-
+<!DOCTYPE html>
 <head>
-  <meta charset="utf-8">
-  <title></title>
-  <meta name="description" content="">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-
-  <meta property="og:title" content="">
-  <meta property="og:type" content="">
-  <meta property="og:url" content="">
-  <meta property="og:image" content="">
-
-  <link rel="manifest" href="site.webmanifest">
-  <link rel="apple-touch-icon" href="icon.png">
-  <!-- Place favicon.ico in the root directory -->
-
-  <link rel="stylesheet" href="css/normalize.css">
-  <link rel="stylesheet" href="css/main.css">
-
-  <script src="js/main.js" defer></script>
-  <meta name="theme-color" content="#fafafa">
-  <link rel="stylesheet" href="css/bootstrap/bootstrap.min.css"/>
+  <meta charset="UTF-8">
+  <title>Flippers</title>
+  <script src="js/level.js" defer></script>
+  <link rel="stylesheet" href="css/level.css">
+  <link rel="stylesheet" href="css/Button.css">
 </head>
-
 <body>
-<div style="width: 100%">
-  <button class="quitexercise">Quit Exercise</button>
-  <button class="restart" onclick="resetCounter()">Restart</button>
-
-  <div style="margin-top: 1%">
-    <label id="time" style="color:white; font-size: 25px">Time: 60</label>
+<div id="head">
+  <label class="head-title">Welcome to the flippers</label>
+  <br>
+  <br>
+  <br>
+  <br>
+  <button id="start" class="button-start">Start</button>
+  <br>
+  <br>
+  <br>
+  <br>
+  <button id="flip" class="button-flip">Introducing function</button>
+</div>
+<div id="teach">
+  <p align="center">
+    <button id="exit" class="exit" type="button">Exit</button>
     <br>
-    <label style="color:white; font-size: 25px">Level:</label><label style="color:white; font-size: 25px; margin-left: 10px">0</label>
-  <br>
-  <label style="color:white; font-size: 25px">Which eye:</label><label style="color:white; font-size: 25px; margin-left: 10px">both eyes</label>
-  <br>
-  <label style="color: white; font-size: 25px">Number of flips:</label><label style="color:white; font-size: 25px; margin-left: 10px">+/-1.00</label>
-  <br>
-    <form>
-  <label style="color: white; font-size: 25px">Score: </label>
-    <label id="counter-label" style="color: white; font-family: inherit; font-size: x-large; margin-left: 10px">0</label>
-    </form>
-  </div>
-</div>
-<hr style=" border: 1px solid white" />
-<br>
-
-</div>
-<div>
-<!--<img src="img/Flipper.png" style="">-->
-  <div id="word" style="width:50%; height: 600px; background-color: white; top: 0; right: 0; left: 0; bottom: 0; margin: auto; overflow: hidden; border: 5px solid #b3d4fc; position: relative">
-    <img src="img/Training.png" style="position: absolute;
-    top: 50%;
-    left: 50%;
-    display: block;
-    min-width: 100%;
-    min-height: 100%;
-    transform:translate(-50%,-50%);" id="img1" onclick="hideImg()">
-
-    <p ondblclick="showImg()" style="font-size: 20px">Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Maecenas porttitor congue massa. Fusce posuere, magna sed pulvinar ultricies, purus lectus malesuada libero, sit amet commodo magna eros quis urna. Nunc viverra imperdiet enim. Fusce est. Vivamus a tellus. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas.
-
-    Proin pharetra nonummy pede. Mauris et orci. Aenean nec lorem. In porttitor. Donec laoreet nonummy augue. Suspendisse dui purus, scelerisque at, vulputate vitae, pretium mattis, nunc. Mauris eget neque at sem venenatis eleifend.
-
-    Ut nonummy. Fusce aliquet pede non pede. Suspendisse dapibus lorem pellentesque magna. Integer nulla. Donec blandit feugiat ligula. Donec hendrerit, felis et imperdiet euismod, purus ipsum pretium metus, in lacinia nulla nisl eget sapien. Donec ut est in lectus consequat consequat.
-
-    Etiam eget dui. Aliquam erat volutpat. Sed at lorem in nunc porta tristique.
-
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <label class="teach-title">How to use the flippers</label>
+    <br>
+    <br>
+    <br>
+    <video width="800" height="500" controls="controls">
+      <source src="Flippers.mp4" type="video/mp4">
+    </video>
   </p>
 </div>
+<div id="nav" style="width: 100%">
+  <button class="quitexercise" onclick="quit()">Quit Exercise</button>
+  <button class="save" onclick="saveLevel()">Save</button>
+
+  <div style="margin-top: 1%">
+    <label id="time" style="color:white; font-size: 25px">Time : 300</label>
+    <button class="restart" onclick="restart0()">Restart from Level 0</button>
+    <br>
+    <br>
+    <label id="level" style="color:white; font-size: 25px">Level : 0</label>
+    <br>
+    <br>
+    <label id="counter-label" style="color:white; font-size: 25px">Score : 0</label>
+  </div>
 </div>
 
-<br>
+<form id="msform">
+  <div id="plate"></div>
+  <div id="plate1"></div>
+  <div id="plate2"></div>
+  <div id="plate3"></div>
+  <div id="plate4"></div>
+  <div id="plate5"></div>
 
-<button id="redbutton" class="redbutton" onclick="incrementClick()">Click here, when you have made the text clear</button>
+  <fieldset id="fieldset1">
+    <h1>For this exercise, please wear your screen-glasses, if you have any.
+      Then select the smallest font size that you comfortably can read
+      without the flippers.</h1>
+    <br>
+    <br>
+    <br>
+    <br>
+    <p id="title" style="font-size:20px;">qwert yuiop</p>
+    <br>
+    <br>
+    <br>
+    <br>
+    <input id="Btn1" type="button" value="➕ (Larger size)" name="" />
+    <input id="Btn2" type="button" value="➖ (Smaller size)" name="" />
+    <br>
+    <br>
+    <input type="button" name="next" class="next action-button" value="Next" onclick="next0()"/>
+  </fieldset>
 
+  <fieldset id="fieldset2">
 
-<!--<button onclick="myfunction()">++</button>
-<p id="demo" style="color: white"></p>-->
+    <h1>Time for daily training</h1>
+    <br>
+    <br>
+    <button class="plus0" onclick="plus0()" value="plus +" type="button"><span>plus</span></button>
+    <input name="next" class="next action-button" onclick="countdown0()" value="start" type="button" >
+    <button class="minus0" onclick="minus0()" value="minus -" type="button"><span>minus</span></button>
+    <br>
+    <br>
+    <input id="jump" class="jump"  value="jump up level 5" type="button">
+    <input id="continue2" class="continue2"  value="level continue" type="button">
+  </fieldset>
+
+  <fieldset id="fieldset3">
+    <div style="width: 100%; height: 300px">
+      <div style="float: left">
+        <h2 id="fieldset3-eye" class="fs-title">Which eye : Both eyes</h2>
+        <h2 id="fieldset3-symbol" class="fs-title">Number of flips : - 1.00</h2>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <p id="title1"></p>
+        <br>
+      </div>
+      <div style="float: right">
+
+        <p>Select the same text in the following selection</p>
+        <br>
+        <label class="cover">
+          <input type="checkbox"  name="level0statement" id="1" onclick="selectCheckOne(this)" class="level0"><span id="word1" class="level00" for="1">
+      </span>
+        </label>
+        <br>
+        <br>
+        <label class="cover">
+          <input type="checkbox"  name="level0statement" id="2" onclick="selectCheckOne(this)" class="level0"><span id="word2" class="level00" for="2">
+      </span>
+        </label>
+        <br>
+        <br>
+        <label class="cover">
+          <input type="checkbox"  name="level0statement" id="3" onclick="selectCheckOne(this)" class="level0"><span id="word3" class="level00" for="3">
+      </span>
+        </label>
+        <br>
+        <br>
+        <label class="cover">
+          <input type="checkbox"  name="level0statement" id="4" onclick="selectCheckOne(this)" class="level0"><span id="word4" class="level00" for="4">
+      </span>
+        </label>
+        <br>
+        <br>
+        <label class="cover">
+          <input type="checkbox"  name="level0statement" id="5" onclick="selectCheckOne(this)" class="level0"><span id="word5" class="level00" for="5">
+      </span>
+        </label>
+      </div>
+    </div>
+    <br>
+    <br>
+    <input type="button" id="next" name="next" class="next action-button" value="Next" />
+  </fieldset>
+
+  <fieldset id="fieldset4">
+    <h1>Choose your age from the options below</h1>
+    <br>
+    <br>
+    <input id="year1" class="year"  value="ages : 0-30 years" onclick="fieldset4old()" type="button">
+    <input id="year2" class="year" value="ages : 31 years and up" onclick="fieldset4old2()" type="button">
+  </fieldset>
+
+  <fieldset id="fieldset5">
+    <h1>Choose your age from the options below</h1>
+    <br>
+    <br>
+    <input id="year3" class="year" value="ages : 0-20 years" onclick="fieldset5old()" type="button">
+    <input id="year4" class="year" value="ages : 21-40 years" onclick="fieldset5old2()" type="button">
+    <input id="year5" class="year" value="ages : 41 years and up" onclick="fieldset5old3()" type="button">
+  </fieldset>
+
+  <fieldset id="fieldset6">
+    <h1>Choose your age from the options below</h1>
+    <br>
+    <br>
+    <input id="year6" class="year" value="ages : 0-20 years" onclick="fieldset6old()" type="button">
+    <input id="year7" class="year" value="ages : 21-30 years" onclick="fieldset6old2()" type="button">
+    <input id="year8" class="year" value="ages : 31-40 years" onclick="fieldset6old3()" type="button">
+    <input id="year9" class="year" value="ages : 41 years and up" onclick="fieldset6old4()" type="button">
+  </fieldset>
+
+  <fieldset id="fieldset7">
+    <h1>Choose your age from the options below</h1>
+    <br>
+    <br>
+    <input id="year10" class="year"  value="ages : 0-30 years" onclick="fieldset7old()" type="button">
+    <input id="year11" class="year" value="ages : 31 years and up" onclick="fieldset7old2()" type="button">
+  </fieldset>
+
+  <fieldset id="fieldset8">
+    <h1>Choose your age from the options below</h1>
+    <br>
+    <br>
+    <input id="year12" class="year" value="ages : 0-20 years" onclick="fieldset8old()" type="button">
+    <input id="year13" class="year" value="ages : 21-40 years" onclick="fieldset8old2()" type="button">
+    <input id="year14" class="year" value="ages : 41 years and up" onclick="fieldset8old3()" type="button">
+  </fieldset>
+
+  <fieldset id="fieldset9">
+    <h1>Choose your age from the options below</h1>
+    <br>
+    <br>
+    <input id="year15" class="year" value="ages : 0-20 years" onclick="fieldset9old()" type="button">
+    <input id="year16" class="year" value="ages : 21-30 years" onclick="fieldset9old2()" type="button">
+    <input id="year17" class="year" value="ages : 31-40 years" onclick="fieldset9old3()" type="button">
+    <input id="year18" class="year" value="ages : 41 years and up" onclick="fieldset9old4()" type="button">
+  </fieldset>
+
+  <fieldset id="fieldset10">
+    <h1>Do you want to stop or continue</h1>
+    <button id="stop1" class="next action-button" type="button">Stop</button>
+    <button id="continue1" class="next action-button" type="button">Continue</button>
+  </fieldset>
+</form>
+
 </body>
-
 </html>

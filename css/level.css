@@ -1,4 +1,4 @@
-@import url(https://fonts.googleapis.com/css?family=Montserrat);
+/*@import url(https://fonts.googleapis.com/css?family=Montserrat);*/
 
 /*basic reset*/
 * {margin: 0; padding: 0;}
@@ -17,21 +17,21 @@ body {
 /*form styles*/
 #msform {
   width: 100%;
-  margin: 100px auto;
+  margin: 50px auto;
   text-align: center;
   justify-content: center;
   align-items: center;
   position: relative;
 }
 #msform fieldset {
-  background: white;
+  background-color: white;
   border: 0 none;
   border-radius: 3px;
   box-shadow: 0 0 15px 1px rgba(0, 0, 0, 0.4);
   padding: 20px 30px;
   box-sizing: border-box;
   width: 50%;
-  min-width: 650px;
+  min-width: 800px;
   overflow-x: auto;
   margin: auto;
   top: 0;
@@ -76,54 +76,32 @@ body {
   color: #666;
   margin-bottom: 20px;
 }
-/*progressbar*/
-#progressbar {
-  margin-bottom: 30px;
-  overflow: hidden;
-  /*CSS counters to number the steps*/
-  counter-reset: step;
+
+.head-title{
+  font-weight: bolder;
+  background-image: -webkit-linear-gradient(top, #ffffff, #3fcc8f, #00b3ff);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  align-items: center;
+  margin-top: 150px;
+  display: flex;
+  flex-direction: column;
+  font-size: 4.6rem;
+  animation: ran 1s linear infinite;
+  font-family: Algerian;
 }
-#progressbar li {
-  list-style-type: none;
-  color: white;
-  text-transform: uppercase;
-  font-size: 9px;
-  width: 33.33%;
-  float: left;
-  position: relative;
-}
-#progressbar li:before {
-  content: counter(step);
-  counter-increment: step;
-  width: 20px;
-  line-height: 20px;
-  display: block;
-  font-size: 10px;
-  color: #333;
-  background: white;
-  border-radius: 3px;
-  margin: 0 auto 5px auto;
-}
-/*progressbar connectors*/
-#progressbar li:after {
-  content: '';
-  width: 100%;
-  height: 2px;
-  background: white;
-  position: absolute;
-  left: -50%;
-  top: 9px;
-  z-index: -1; /*put it behind the numbers*/
-}
-#progressbar li:first-child:after {
-  /*connector not needed before the first step*/
-  content: none;
-}
-/*marking active/completed steps green*/
-/*The number of the step and the connector before it = green*/
-#progressbar li.active:before,  #progressbar li.active:after{
-  background: #27AE60;
-  color: white;
+
+.teach-title{
+  font-weight: bolder;
+  background-image: -webkit-linear-gradient(top, #ff6301, #ffee01, #8dff01);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  align-items: center;
+  display: flex;
+  flex-direction: column;
+  font-size: 4.6rem;
+  animation: ran 1s linear infinite;
+  font-family: Algerian;
 }
 
 .level0{
@@ -153,7 +131,7 @@ body {
   cursor: pointer;
   transition-duration: 1s;
   filter: brightness(1);
-background-color: rgba(85,85,85,0.5);
+  background-color: rgba(85,85,85,0.5);
 }
 
 input:checked + span{
@@ -163,6 +141,7 @@ input:checked + span{
 
 #plate{
   display: none;
+  font-size: 30px;
   color:white;
 }
 
@@ -171,6 +150,38 @@ input:checked + span{
   font-size: 100px;
   color:greenyellow;
   font-family: Blackadder ITC;
+}
+
+#plate2{
+  display: none;
+  font-size: 30px;
+  color:white;
+  font-family: Forte;
+}
+
+#plate3{
+  display: none;
+  font-size: 30px;
+  color:white;
+  font-family: Forte;
+}
+
+#plate4{
+  display: none;
+  font-size: 30px;
+  color:white;
+  font-family: Arial;
+}
+
+#plate5{
+  display: none;
+  font-size: 30px;
+  color:white;
+  font-family: Arial;
+}
+
+#teach{
+  display: none;
 }
 
 #Btn1{
@@ -249,12 +260,12 @@ input:checked + span{
   position: absolute;
   opacity: 0;
   top: 0;
-  right: -20px;
+  right: -10px;
   transition: 0.5s;
 }
 
 .plus0:hover span {
-  padding-right: 25px;
+  padding-right: 15px;
 }
 
 .plus0:hover span:after {
@@ -298,12 +309,12 @@ input:checked + span{
   position: absolute;
   opacity: 0;
   top: 0;
-  right: -20px;
+  right: -10px;
   transition: 0.5s;
 }
 
 .minus0:hover span {
-  padding-right: 25px;
+  padding-right: 15px;
 }
 
 .minus0:hover span:after {
@@ -327,11 +338,28 @@ input:checked + span{
   display: none;
 }
 
-.jump:hover{
+.jump:hover, .jump:focus{
+  box-shadow: 0 0 0 2px white, 0 0 0 3px #27AE60;
+}
+
+.continue2{
+  border-radius: 4px;
+  background-color: rgba(0,249,178,0.7);
+  border: none;
+  color: #FFFFFF;
+  text-align: center;
+  font-size: 20px;
+  padding: 10px;
+  width: 150px;
+  transition: all 0.5s;
   cursor: pointer;
-  transition-duration: 0.5s;
-  filter: brightness(1);
-  background-color: rgb(0,195,255);
+  margin: 5px;
+  vertical-align:middle;
+  display: none;
+}
+
+.continue2:hover, .continue2:focus{
+  box-shadow: 0 0 0 2px white, 0 0 0 3px #27AE60;
 }
 
 .year{
@@ -423,4 +451,58 @@ input:checked + span{
 #year18{
   clear: right;
   float: right;
+}
+
+#fieldset1 {
+  animation: clipRectIn .6s;
+}
+
+@keyframes clipRectIn {
+  0%   {
+    clip-path: inset(50% round 10% 50%);
+  }
+  100% {
+    clip-path: inset(0% round 0);
+  }
+}
+
+#fieldset2 {
+  animation: clipCircleIn .6s;
+}
+
+@keyframes clipCircleIn {
+  0%   {
+    clip-path: circle(0 at 50% 50%);
+  }
+  100% {
+    clip-path: circle(200px at 50% 50%);
+  }
+}
+
+#fieldset3, #teach, #head {
+  animation: clipDiamondIn .6s;
+}
+@keyframes clipDiamondIn {
+  0%   {
+    clip-path: polygon(50% 50%, 50% 50%, 50% 50%, 50% 50%);
+  }
+  100% {
+    clip-path: polygon(50% -50%, 150% 50%, 50% 150%, -50% 50%);
+  }
+}
+
+#fieldset4, #fieldset5, #fieldset6, #fieldset7, #fieldset8, #fieldset9, #fieldset10{
+  animation: clipTriangleIn .6s;
+}
+
+@keyframes clipTriangleIn {
+  0%   {
+    clip-path: polygon(50% 100%, 50% 0%, 0% 0%, 100% 0%, 50% 0%);
+  }
+  50% {
+    clip-path: polygon(50% 100%, 0% 0%, 0% 0%, 100% 0%, 100% 0%);
+  }
+  100% {
+    clip-path: polygon(50% 100%, 0% 100%, 0% 0%, 100% 0%, 100% 100%);
+  }
 }
